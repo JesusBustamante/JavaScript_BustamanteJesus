@@ -207,8 +207,8 @@ while (preguntita === true){
                 }
 
                 console.log("")
-                console.log(`Identificacion: " ${i.informacion_personal.identificación}`);
-                console.log(`Nombre: " ${i.informacion_personal.nombre}`);
+                console.log(`Identificacion:  ${i.informacion_personal.identificación}`);
+                console.log(`Nombre:  ${i.informacion_personal.nombre}`);
                 console.log(`Edad: ${i.informacion_personal.edad}`);
                 console.log(`Dirección: ${i.informacion_personal.direccion.calle} ${i.informacion_personal.direccion.numero} ${i.informacion_personal.direccion.ciudad}`);
                 console.log(`Correo: ${i.informacion_personal.contacto.correo}`);
@@ -225,5 +225,5 @@ while (preguntita === true){
         console.log(jsonj);
     }
 
-    var pregunta = false
+    var preguntita = false
 }
