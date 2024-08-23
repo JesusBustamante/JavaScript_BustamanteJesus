@@ -219,10 +219,54 @@ while (preguntita === true){
     }
 
     if (answer === 4) {
-        let idEliminar = parseInt(prompt("Ingrese el ID de la persona que desea eliminar:"));
-        jsonj = jsonj.filter(person => person.informacion_personal.identificación !== idEliminar);
-        console.log("Persona eliminada con éxito.");
-        console.log(jsonj);
+        var respuestadelete = parseInt(prompt("Ingrese el ID de la persona a revisar:"));
+
+        for (let i of jsonj) {
+            
+            if (i.informacion_personal.identificación === respuestadelete) {
+
+                jsonj["informacion_personal"] = {}; 
+                let datoCambiardelete = parseInt(prompt("Que te gustaría cambiar del estudiante:\n1. Nombre: \n2. Edad: \n3. Calle: \n4. Numero de calle: \n5. Ciudad: \n6. Correo: \n7. Telefono: \n "));
+                
+                
+                if (datoCambiardelete === 1) {
+                    delete i.informacion_personal.nombre
+                    console.log("Borrado realizado!")
+                }
+                if (datoCambiardelete === 2) {
+                    delete i.informacion_personal.edad
+                    console.log("Borrado realizado!")
+                }
+                if (datoCambiardelete === 3) {
+                    delete i.informacion_personal.calle
+                    console.log("Borrado realizado!")
+                }
+                if (datoCambiardelete === 4) {
+                    delete i.informacion_personal.numero
+                    console.log("Borrado realizado!")
+                }
+                if (datoCambiardelete === 5) {
+                    delete i.informacion_personal.ciudad
+                    console.log("Borrado realizado!")
+                }
+                if (datoCambiardelete === 6) {
+                    delete i.informacion_personal.correo
+                    console.log("Borrado realizado!")
+                }
+                if (datoCambiardelete === 7) {
+                    delete i.informacion_personal.telefono
+                    console.log("Borrado realizado!")
+                }
+
+                console.log("")
+                console.log(`Nombre:  ${i.informacion_personal.nombre}`);
+                console.log(`Edad: ${i.informacion_personal.edad}`);
+                console.log(`Dirección: ${i.informacion_personal.direccion.calle} ${i.informacion_personal.direccion.numero} ${i.informacion_personal.direccion.ciudad}`);
+                console.log(`Correo: ${i.informacion_personal.contacto.correo}`);
+                console.log(`Teléfono: ${i.informacion_personal.contacto.telefono}`);
+
+            }
+        }
     }
 
     var preguntita = false
