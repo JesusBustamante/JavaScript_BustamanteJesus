@@ -53,9 +53,9 @@ var jsonj = [
 ]
 
 
-console.log("------------------------------------------------------------")
-console.log("                   Bienvenido Usuario")
-console.log("------------------------------------------------------------")
+console.log("------------------------------------")
+console.log("        Bienvenido Usuario")
+console.log("------------------------------------")
 console.log("")
 
 
@@ -105,112 +105,106 @@ if (answer === 1) {
 if (answer === 2) {
 
     console.log("Información Personal");
-    var respuesta = parseInt(prompt("Ingrese el ID de la persona a revisar: "));
+    var respuesta = parseInt(prompt("Ingrese el ID de la persona a revisar:"));
 
     for (let i of jsonj) {
-        for (let x of i.informacion_personal) {
-            if (x.identificacion === respuesta) {
+        
+        if (i.informacion_personal.identificación === respuesta) {
 
-                console.clear();
+            console.clear();
 
-                console.log("------------------------------------------------");
-                console.log(`  DATOS: ${x.nombres}`);
-                console.log("------------------------------------------------\n");
-                console.log("");
+            console.log("------------------------------------------------");
+            console.log(`  DATOS: ${i.informacion_personal.nombre}`);
+            console.log("------------------------------------------------\n");
+            console.log("");
 
-                console.log("Identificacion: ", x.identificacion);
-                console.log("Nombre: ", x.nombre);
-                console.log("Edad: ", x.edad);
-                console.log("Calle: ", x.calle);
-                console.log("Numero: ", x.numero);
-                console.log("Ciudad: ", x.ciudad);
-                console.log("Correo: ", x.correo);
-                console.log("Telefono: ", x.telefono);
-            }
+            console.log(`Identificacion: " ${i.informacion_personal.identificación}`);
+            console.log(`Nombre: " ${i.informacion_personal.nombre}`);
+            console.log(`Edad: ${i.informacion_personal.edad}`);
+            console.log(`Dirección: ${i.informacion_personal.direccion.calle} ${i.informacion_personal.direccion.numero} ${i.informacion_personal.direccion.ciudad}`);
+            console.log(`Correo: ${i.informacion_personal.contacto.correo}`);
+            console.log(`Teléfono: ${i.informacion_personal.contacto.telefono}`);
+            
         }
     }
 }
 
 if (answer === 3) {
 
-    var estudiante = prompt("¿Cual numero de identificacion vas a cambiar? ");
+    var estudiante = parseInt(prompt("¿Cual numero de identificacion vas a cambiar? "));
 
     for (let i of jsonj) {
-        for (let x of i.informacion_personal) {
-            if (x.identificacion === estudiante) {
 
-                console.clear();
+        if (i.informacion_personal.identificación === estudiante) {
 
-                console.log("------------------------------------------------");
-                console.log(`  DATOS: ${x.nombres}`);
-                console.log("------------------------------------------------\n");
-                console.log("");
+            console.clear();
 
-                console.log("Identificacion: ", x.identificacion);
-                console.log("Nombre: ", x.nombre);
-                console.log("Edad: ", x.edad);
-                console.log("Calle: ", x.calle);
-                console.log("Numero: ", x.numero);
-                console.log("Ciudad: ", x.ciudad);
-                console.log("Correo: ", x.correo);
-                console.log("Telefono: ", x.telefono);
+            console.log("------------------------------------------------");
+            console.log(`  DATOS: ${i.informacion_personal.nombre}`);
+            console.log("------------------------------------------------\n");
+            console.log("");
 
-                let datoCambiar = parseInt(prompt("Que te gustaría cambiar del estudiante:\n0. ID: \n1. Nombre: \n2. Edad: \n3. Calle: \n4. Numero de calle: \n5. Ciudad: \n6. Correo: \n7. Telefono: \n "));
-                
-                if (datoCambiar === 0) {
-                    newid = parseInt(prompt("Ingresa el nuevo id: "))
-                    jsonj["informacion_personal"][estudiante-1]["identificacion"] = newid
-                    console.log("Cambio realizado!")
-                }
-                if (datoCambiar === 1) {
-                    newname = parseInt(prompt("Ingresa el nuevo nombre: "))
-                    jsonj["informacion_personal"][estudiante-1]["nombre"] = newname
-                    console.log("Cambio realizado!")
-                }
-                if (datoCambiar === 2) {
-                    newage = parseInt(prompt("Ingresa la nueva edad: "))
-                    jsonj["informacion_personal"][estudiante-1]["edad"] = newage
-                    console.log("Cambio realizado!")
-                }
-                if (datoCambiar === 3) {
-                    newstreet = parseInt(prompt("Ingresa la nueva calle: "))
-                    jsonj["informacion_personal"][estudiante-1]["calle"] = newstreet
-                    console.log("Cambio realizado!")
-                }
-                if (datoCambiar === 4) {
-                    newadrees = parseInt(prompt("Ingresa el nuevo numero de calle: "))
-                    jsonj["informacion_personal"][estudiante-1]["numero"] = newadrees
-                    console.log("Cambio realizado!")
-                }
-                if (datoCambiar === 5) {
-                    newcity = parseInt(prompt("Ingresa la nueva ciudad: "))
-                    jsonj["informacion_personal"][estudiante-1]["ciudad"] = newcity
-                    console.log("Cambio realizado!")
-                }
-                if (datoCambiar === 6) {
-                    newemail = parseInt(prompt("Ingresa el nuevo correo: "))
-                    jsonj["informacion_personal"][estudiante-1]["identificacion"] = newemail
-                    console.log("Cambio realizado!")
-                }
-                if (datoCambiar === 7) {
-                    newphone = parseInt(prompt("Ingresa el nuevo numero de telefono: "))
-                    jsonj["informacion_personal"][estudiante-1]["identificacion"] = newphone
-                    console.log("Cambio realizado!")
-                }
+            console.log(`Identificacion: " ${i.informacion_personal.identificación}`);
+            console.log(`Nombre: " ${i.informacion_personal.nombre}`);
+            console.log(`Edad: ${i.informacion_personal.edad}`);
+            console.log(`Dirección: ${i.informacion_personal.direccion.calle} ${i.informacion_personal.direccion.numero} ${i.informacion_personal.direccion.ciudad}`);
+            console.log(`Correo: ${i.informacion_personal.contacto.correo}`);
+            console.log(`Teléfono: ${i.informacion_personal.contacto.telefono}`);
+            console.log("")
 
-                for (let i of jsonj) {
-                    for (x in i.informacion_personal) {
-                        console.log("Identificacion: ", x.identificacion);
-                        console.log("Nombre: ", x.nombre);
-                        console.log("Edad: ", x.edad);
-                        console.log("Calle: ", x.calle);
-                        console.log("Numero: ", x.numero);
-                        console.log("Ciudad: ", x.ciudad);
-                        console.log("Correo: ", x.correo);
-                        console.log("Telefono: ", x.telefono);
-                    }
-                }
+            jsonj["informacion_personal"] = {}; 
+            let datoCambiar = parseInt(prompt("Que te gustaría cambiar del estudiante:\n1. ID: \n2. Nombre: \n3. Edad: \n4. Calle: \n5. Numero de calle: \n6. Ciudad: \n7. Correo: \n8. Telefono: \n "));
+            
+            
+            if (datoCambiar === 1) {
+                newid = parseInt(prompt("Ingresa el nuevo id: "))
+                i.informacion_personal.identificación = newid
+                console.log("Cambio realizado!")
             }
+            if (datoCambiar === 2) {
+                newname = prompt("Ingresa el nuevo nombre: ")
+                i.informacion_personal.nombre = newname
+                console.log("Cambio realizado!")
+            }
+            if (datoCambiar === 3) {
+                newage = parseInt(prompt("Ingresa la nueva edad: "))
+                i.informacion_personal.edad = newage
+                console.log("Cambio realizado!")
+            }
+            if (datoCambiar === 4) {
+                newstreet = prompt("Ingresa la nueva calle: ")
+                i.informacion_personal.calle = newstreet
+                console.log("Cambio realizado!")
+            }
+            if (datoCambiar === 5) {
+                newadrees = parseInt(prompt("Ingresa el nuevo numero de calle: "))
+                i.informacion_personal.numero = newadrees
+                console.log("Cambio realizado!")
+            }
+            if (datoCambiar === 6) {
+                newcity = parseInt(prompt("Ingresa la nueva ciudad: "))
+                i.informacion_personal.ciudad = newcity
+                console.log("Cambio realizado!")
+            }
+            if (datoCambiar === 7) {
+                newemail = parseInt(prompt("Ingresa el nuevo correo: "))
+                i.informacion_personal.correo = newemail
+                console.log("Cambio realizado!")
+            }
+            if (datoCambiar === 8) {
+                newphone = parseInt(prompt("Ingresa el nuevo numero de telefono: "))
+                i.informacion_personal.telefono = newphone
+                console.log("Cambio realizado!")
+            }
+
+            console.log("")
+            console.log(`Identificacion: " ${i.informacion_personal.identificación}`);
+            console.log(`Nombre: " ${i.informacion_personal.nombre}`);
+            console.log(`Edad: ${i.informacion_personal.edad}`);
+            console.log(`Dirección: ${i.informacion_personal.direccion.calle} ${i.informacion_personal.direccion.numero} ${i.informacion_personal.direccion.ciudad}`);
+            console.log(`Correo: ${i.informacion_personal.contacto.correo}`);
+            console.log(`Teléfono: ${i.informacion_personal.contacto.telefono}`);
         }
+        
     }
 }
