@@ -16,7 +16,7 @@ var jsonj = [
         "name": "Desktop",
         "category": "Electronics",
         "price": 999.99,
-        "quantityInStock": 50,
+        "quantityInStock": 5,
         "supplierId": 101
       }
     ],
@@ -38,6 +38,20 @@ var jsonj = [
         "productId": 1,
         "quantity": 5,
         "orderDate": "2024-08-23",
+        "status": "Delivered"
+      },
+      {
+        "orderId": 1002,
+        "productId": 2,
+        "quantity": 5,
+        "orderDate": "2024-09-23",
+        "status": "Delivered"
+      },
+      {
+        "orderId": 1003,
+        "productId": 1,
+        "quantity": 7,
+        "orderDate": "2024-08-25",
         "status": "Delivered"
       }
     ]
@@ -305,6 +319,86 @@ function deleteOrder(orderId) {
 
 }
 
+// Funciones Stock Management
+
+function checkStockLevels() {
+
+  for (let i = 0; i < jsonj[0].products.length; i++)   {
+    
+    if (jsonj[0].products[i].quantityInStock < 10) {
+      console.log(`Nombre: ${jsonj[0].products[i].name}`);
+      console.log(`Categoría: ${jsonj[0].products[i].category}`);
+      console.log(`Precio: ${jsonj[0].products[i].price}`);
+      console.log(`Cantidad en stock: ${jsonj[0].products[i].quantityInStock}`);
+      console.log(`ID de proveedor: ${jsonj[0].products[i].supplierId}`);
+    }
+
+  }
+
+}
+
+function restockProduct(id, quantity) {
+  for (let i = 0; i < jsonj[0].products.length; i++) {
+
+    if (jsonj[0].products[i].id === id) {
+      jsonj[0].products[i].quantityInStock += quantity;
+
+    }
+  }
+}
+
+// Funciones Reporting
+
+function generateInventoryReport() {
+  for (let i = 0; i < jsonj[0].products.length; i++) {
+    console.log(`Nombre: ${jsonj[0].products[i].name}`);
+    console.log(`Cantidad en stock: ${jsonj[0].products[i].quantityInStock}`);
+    console.log("")
+
+    total = jsonj[0].products[i].quantityInStock * jsonj[0].products[i].price
+    console.log("")
+    console.log(`Valor stock: ${total}`)
+
+    for (let i = 0; i < jsonj[0].suppliers.length; i++) {
+      console.log("Información del proveedor")
+      console.log("")
+      console.log(`ID: ${jsonj[0].suppliers[i].id}`);
+      console.log(`Nombre: ${jsonj[0].suppliers[i].name}`);
+      console.log(`Teléfono: ${jsonj[0].suppliers[i].contactInfo.phone}`);
+      console.log(`Correo electrónico: ${jsonj[0].suppliers[i].contactInfo.email}`);
+      console.log(`Dirección: ${jsonj[0].suppliers[i].contactInfo.address}`);
+      console.log("")
+    }
+  
+  }
+  
+}
+
+function generateSalesReport(startDate, endDate) {
+  let filtrado = jsonj[0]["orders"].filter(i => i["orderDate"] >= startDate && i["orderDate"] <= endDate)
+  console.log(filtrado);
+
+  let contador = 1
+  for (let i = +1; i < filtrado.length; i++) {
+    contador++
+
+    let totalventa = contador * jsonj[0].orders[i].quantity
+    console.log(totalventa)
+    
+  }
+
+  console.log("Numero toral de pedidos")
+  console.log(contador)
+
+
+  
+}
+
+
+
+
+
+
 // Inicio
 
 console.log("---------------------------------------");+
@@ -493,6 +587,50 @@ if (option === 3) {
   
     deleteOrder(orderId)
   
+  }
+}
+
+if (option === 4) {
+  console.clear()
+
+  console.log("1. Low Stock");
+  console.log("2. Incrementar cantidad de productos");
+  let option = parseInt(prompt("Selecciona una opción:"));
+
+  if (option === 1) {
+    console.clear()
+    console.log("Stock bajo: produtos con cantidades menores a 10")
+    console.log("")
+    checkStockLevels()
+  }
+
+  if (option === 2) {
+    console.clear()
+    let id = parseInt(prompt("Ingrese el ID del producto a actualizar cantidad: "));
+    let quantity = parseInt(prompt("Ingrese la cantidad a incrementar"))
+    restockProduct(id, quantity)
+    viewProducts()
+  }
+
+
+}
+
+if (option === 5) {
+  console.log("1. Informe de ventas")
+  console.log("2. Informe de productos")
+  let option = parseInt(prompt("Seleciona una opción"))
+
+  if (option === 1) {
+
+    let startDate = prompt("Ingresa la fecha inicial (AAAA-MM-DD)")
+    let endDate = prompt("Ingresa la fecha final (AAAA-MM-DD)")
+    generateSalesReport(startDate, endDate) 
+
+  }
+
+  if (option === 2) {
+    console.log("")
+    generateInventoryReport()
   }
 
 }
