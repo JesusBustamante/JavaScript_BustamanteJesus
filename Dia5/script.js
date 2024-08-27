@@ -49,7 +49,7 @@ var jsonj = [
       },
       {
         "orderId": 1003,
-        "productId": 1,
+        "productId": 2,
         "quantity": 7,
         "orderDate": "2024-08-25",
         "status": "Delivered"
@@ -375,26 +375,66 @@ function generateInventoryReport() {
 }
 
 function generateSalesReport(startDate, endDate) {
-  let filtrado = jsonj[0]["orders"].filter(i => i["orderDate"] >= startDate && i["orderDate"] <= endDate)
-  console.log(filtrado);
+  let filtrado = jsonj[0]["orders"].filter(i => i["orderDate"] >= startDate && i["orderDate"] <= endDate);
 
   let contador = 1
   for (let i = +1; i < filtrado.length; i++) {
     contador++
+  };
 
-    let totalventa = contador * jsonj[0].orders[i].quantity
-    console.log(totalventa)
+  console.log("Numero total de pedidos");
+  console.log(contador)
+  console.log("")
+  console.log("Información de productos")
+
+  let totalganancia = 0
+  let salesByProduct = {};
+
+  for (let x of filtrado) {
+    const productId = x["productId"];
+    const quantityvendida = x["quantity"];
+    const product = jsonj[0]["products"].find(p => p["id"] === productId);
+
     
+    if (product) {
+      const ganancia = product["price"] * quantityvendida;
+      totalganancia += ganancia;
+      var nameProduct= product["name"]
+      var stockProduct= product["quantityInStock"]
+      var priceUn= product["price"]
+
+      console.log("Name :", nameProduct);
+      console.log("quantity In Stock :", stockProduct);
+      console.log("Price :", priceUn);
+      console.log("")
+
+      if (!salesByProduct[nameProduct]) {
+        salesByProduct[nameProduct] = {
+          unitsSold: 0,
+          pricePerUnit: priceUn,
+          revenue: 0
+        };
+      }
+      salesByProduct[nameProduct].unitsSold += quantityvendida;
+      salesByProduct[nameProduct].revenue += ganancia;
+
+    }  
+  };
+  console.log("")
+  console.log("Total de ingresos generados: $", totalganancia);
+  console.log("")
+
+  console.log("Ventas por producto:");
+  for (let product in salesByProduct) {
+    console.log(`Producto: ${product}`);
+    console.log(`Unidades vendidas: ${salesByProduct[product].unitsSold}`);
+    console.log(`Precio por unidad: $${salesByProduct[product].pricePerUnit}`);
+    console.log(`Ingresos generados: $${salesByProduct[product].revenue}`);
+    console.log("");
   }
 
-  console.log("Numero toral de pedidos")
-  console.log(contador)
 
-
-  
 }
-
-
 
 
 
@@ -616,12 +656,13 @@ if (option === 4) {
 }
 
 if (option === 5) {
+  console.clear()
   console.log("1. Informe de ventas")
   console.log("2. Informe de productos")
   let option = parseInt(prompt("Seleciona una opción"))
 
   if (option === 1) {
-
+    console.clear()
     let startDate = prompt("Ingresa la fecha inicial (AAAA-MM-DD)")
     let endDate = prompt("Ingresa la fecha final (AAAA-MM-DD)")
     generateSalesReport(startDate, endDate) 
