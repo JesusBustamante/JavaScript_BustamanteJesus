@@ -18,6 +18,18 @@
         <button id="readproducts" style="display: none;">Read Products</button>
         <div id="outputreadproducts"></div>
         <button id="createproducts" style="display: none;">Create Products</button>
+        <div id="outputcreateproducts">
+            <form>
+                <input id="productid" type="number" placeholder="Ingresa el ID" style="display: none;">
+                <input id="productname" type="text" placeholder="Ingresa el nombre" style="display: none;">
+                <input id="productcategory" type="text" placeholder="Ingresa la categoría" style="display: none;">
+                <input id="productprice" type="number" placeholder="Ingresa el precio" style="display: none;">
+                <input id="productquantity" type="number" placeholder="Ingresa la cantidad" style="display: none;">
+                <input id="productidsupplier" type="number" placeholder="Ingresa el ID del proveedor" style="display: none;">
+                <button type="button" onclick="addProducts()">Capturar</button>
+            </form>
+            
+        </div>
         <button id="updateproducts" style="display: none;">Update Products</button>
         <button id="deleteproducts" style="display: none;">Delete Products</button>
     </div>
@@ -39,6 +51,10 @@
         <button id="updateorders" style="display: none;">Update Orders</button>
         <button id="deleteorders" style="display: none;">Delete Orders</button>
     </div>
+
+    <form>
+
+    </form>
 
 </body>
 <script src="./script.js"></script>

@@ -6,6 +6,15 @@ products.addEventListener(`click`, (a) => {
     document.getElementById(`deleteproducts`).style.display = `block`
 });
 
+createproducts.addEventListener(`click`, (a) => {
+    document.getElementById(`productid`).style.display = `block`
+    document.getElementById(`productname`).style.display = `block`
+    document.getElementById(`productcategory`).style.display = `block`
+    document.getElementById(`productprice`).style.display = `block`
+    document.getElementById(`productquantity`).style.display = `block`
+    document.getElementById(`productidsupplier`).style.display = `block`
+});
+
 // Suppliers
 suppliers.addEventListener(`click`, (a) => {
     document.getElementById(`readsuppliers`).style.display = `block`
@@ -21,6 +30,8 @@ orders.addEventListener(`click`, (a) => {
     document.getElementById(`updateorders`).style.display = `block`
     document.getElementById(`deleteorders`).style.display = `block`
 });
+
+
 
 // Funciones de products
 document.getElementById("readproducts").addEventListener("click", viewProducts);
@@ -42,17 +53,8 @@ function viewProducts() {
             `
         }
     })
-}
+};
 
-document.getElementById("createproduts").addEventListener(`click`, addProduct);
-
-function addProduct(product) {
-    fetch("datos.json")
-    .then(res => res.json())
-    .then(daticos => {
-        
-    })
-}
 
 // Funciones de suppliers
 document.getElementById("readsuppliers").addEventListener(`click`, viewSuppliers);
@@ -73,7 +75,7 @@ function viewSuppliers() {
             `
         }
     })
-}
+};
 
 // Funciones de orders
 document.getElementById("readorders").addEventListener(`click`, viewOrders);
@@ -92,6 +94,37 @@ function viewOrders() {
             <p>Estado: ${daticos[0].orders[i].status}</p>
             -------------------------------------------------
             `
+        }
+    })
+};
+
+document.getElementById("createproduts").addEventListener(`click`, addProduct);
+
+function addProducts() {
+
+    fetch("datos.json")
+    .then(res => res.json())
+    .then(daticos => {
+
+        for (let i = 0; i < 1; i++) {
+            var idproduct = document.getElementById(`productid`).value;
+            var nameproduct = document.getElementById(`productname`).value;
+            var categoryproduct = document.getElementById(`productcategory`).value;
+            var priceproduct = document.getElementById(`productprice`).value;
+            var quantityproduct = document.getElementById(`productquantity`).value;
+            var idsupplierproduct = document.getElementById(`productidsupplier`).value;
+
+            let product = {
+                "id": idproduct,
+                "name": nameproduct,
+                "category": categoryproduct,
+                "price": priceproduct,
+                "quantityInStock": quantityproduct,
+                "supplierId": idsupplierproduct
+            }
+
+            daticos[0].products.push(product)
+            viewProducts()
         }
     })
 }
