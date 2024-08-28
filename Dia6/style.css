@@ -1,0 +1,115 @@
+@font-face {
+    font-family: mregular;
+    src: url(fonts/MYRIADPRO-REGULAR.OTF);
+}
+
+@font-face {
+    font-family: mlight;
+    src: url(fonts/MyriadPro-Light.otf);
+}
+
+body {
+    background-color: black;
+}
+
+#welcome {
+    color: azure;
+    font-size: 2vw;
+    font-family: mregular;
+}
+
+#options {
+    color: azure;
+    font-size: 1vw;
+    font-family: mregular;
+}
+
+#products {
+    width: 15vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-family: mlight;
+    border: none;
+    border: 0.1vw solid gray;
+    border-radius: 2vw;
+    margin-top: 1vw;
+}
+
+#suppliers {
+    width: 15vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-family: mlight;
+    border: none;
+    border: 0.1vw solid gray;
+    border-radius: 2vw;
+    margin-top: 1vw;
+}
+
+#orders {
+    width: 15vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-family: mlight;
+    border: none;
+    border: 0.1vw solid gray;
+    border-radius: 2vw;
+    margin-top: 1vw;
+}
+
+#productsbuttons > button {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 15vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-family: mlight;
+    border: none;
+    border: 0.15vw solid brown;
+    margin-top: 1vw;
+}
+
+#suppliersbuttons > button {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 15vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-family: mlight;
+    border: none;
+    border: 0.15vw solid brown;
+    margin-top: 1vw;
+}
+
+#ordersbuttons > button {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 15vw;
+    height: 2vw;
+    font-size: 1vw;
+    font-family: mlight;
+    border: none;
+    border: 0.15vw solid brown;
+    margin-top: 1vw;
+}
+
+#outputreadproducts {
+    font-family: mlight;
+    font-size: 1vw;
+    color: azure;
+}
+
+#outputreadsuppliers {
+    font-family: mlight;
+    font-size: 1vw;
+    color: azure;
+}
+
+#outputreadorders {
+    font-family: mlight;
+    font-size: 1vw;
+    color: azure;
+}
