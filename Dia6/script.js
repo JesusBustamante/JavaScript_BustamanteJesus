@@ -98,7 +98,7 @@ function viewOrders() {
     })
 };
 
-document.getElementById("createproduts").addEventListener(`click`, addProduct);
+document.getElementById("createproduts").addEventListener(`click`, addProducts);
 
 function addProducts() {
 
