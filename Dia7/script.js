@@ -18,44 +18,45 @@ function readid(url) {
         const connections = data.connections;
         const image = data.image
         document.getElementById(`list-id`).innerHTML = `
-            <p>ID: ${data.id}</p>
-            <p>Nombre: ${data.name}</p>
+            <p><span style = "color: white;">ID: </span>${data.id}</p>
+            
         `;
         document.getElementById(`list-power`).innerHTML = `
-            <p>intelligence: ${powerstats.intelligence}</p>
-            <p>strength: ${powerstats.strength}</p>
-            <p>speed: ${powerstats.speed}</p>
-            <p>durability: ${powerstats.durability}</p>
-            <p>power: ${powerstats.power}</p>
-            <p>combat: ${powerstats.combat}</p>
+            <p><span style = "color: white;">intelligence:</span>${powerstats.intelligence}</p>
+            <p><span style = "color: white;">strength: </span>${powerstats.strength}</p>
+            <p><span style = "color: white;">speed: </span>${powerstats.speed}</p>
+            <p><span style = "color: white;">durability: </span>${powerstats.durability}</p>
+            <p><span style = "color: white;">power: </span>${powerstats.power}</p>
+            <p><span style = "color: white;">combat: </span>${powerstats.combat}</p>
         `;
         document.getElementById(`list-bio`).innerHTML = `
-            <p>Full name: ${biography["full-name"]}</p>
-            <p>alter egos: ${biography["alter-egos"]}</p>
-            <p>aliases: ${biography.aliases}</p>
-            <p>place of birth: ${biography["place-of-birth"]}</p>
-            <p>first appearance: ${biography["first-appearance"]}</p>
-            <p>publisher: ${biography.publisher}</p>
-            <p>alignment: ${biography.alignment}
+            <p><span style = "color: white;">Full name: </span> ${biography["full-name"]}</p>
+            <p><span style = "color: white;">alter egos: </span> ${biography["alter-egos"]}</p>
+            <p><span style = "color: white;">aliases:</span> ${biography.aliases}</p>
+            <p><span style = "color: white;">place of birth: </span> ${biography["place-of-birth"]}</p>
+            <p><span style = "color: white;">first appearance: </span> ${biography["first-appearance"]}</p>
+            <p><span style = "color: white;">publisher: </span> ${biography.publisher}</p>
+            <p><span style = "color: white;">alignment: </span> ${biography.alignment}</p>
         `;
         document.getElementById(`list-app`).innerHTML = `
-            <p>Full name: ${appearance.gender}</p>
-            <p>alter egos: ${appearance.race}</p>
-            <p>aliases: ${appearance.height}</p>
-            <p>place of birth: ${appearance.weight}</p>
-            <p>first appearance: ${appearance["eye-color"]}</p>
-            <p>publisher: ${appearance["hair-color"]}</p>
+            <p><span style = "color: white;">Full name: </span>${appearance.gender}</p>
+            <p><span style = "color: white;">alter egos: </span>${appearance.race}</p>
+            <p><span style = "color: white;">aliases: </span>${appearance.height}</p>
+            <p><span style = "color: white;">place of birth: </span>${appearance.weight}</p>
+            <p><span style = "color: white;">first appearance: </span>${appearance["eye-color"]}</p>
+            <p><span style = "color: white;">publisher: </span>${appearance["hair-color"]}</p>
         `;
         document.getElementById(`list-work`).innerHTML = `
-            <p>Full name: ${work.occupation}</p>
-            <p>alter egos: ${work.base}</p>
+            <p><span style = "color: white;">Full name: </span>${work.occupation}</p>
+            <p><span style = "color: white;">alter egos: </span>${work.base}</p>
         `;
         document.getElementById(`list-connec`).innerHTML = `
-            <p>group affiliation: ${connections["group_affiliation"]}</p>
-            <p>relatives: ${connections.relatives}</p>
+            <p><span style = "color: white;">group affiliation: </span>${connections["group_affiliation"]}</p>
+            <p><span style = "color: white;">relatives: </span>${connections.relatives}</p>
         `;
         document.getElementById(`list-image`).innerHTML = `
         <img src ="${image.url}">
+        <p>${data.name}</p>
         `;
     })
 }

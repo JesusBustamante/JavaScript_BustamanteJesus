@@ -1,0 +1,105 @@
+@font-face {
+    font-family: atomic;
+    src: url(FONTS/ATOMIC__.TTF);
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: row;
+    height: 3vw;
+    width: 100vw;
+}
+
+#list-id {
+    color: greenyellow;
+    margin-top: 2vw;
+    margin-left: -31vw;
+    font-family: atomic;
+    font-size: 10vw;
+    filter: drop-shadow(
+        0 0 10px 
+    );
+}
+
+#list-power {
+    color: greenyellow;
+    margin-top: 2vw;
+    margin-left: -31vw;
+    font-family: atomic;
+    font-size: 4vw;
+    filter: drop-shadow(
+        0 0 10px 
+    );
+}
+
+
+
+#list-bio {
+    color: greenyellow;
+    margin-top: 2vw;
+    margin-left: -31vw;
+    font-family: atomic;
+    font-size: 3vw;
+    filter: drop-shadow(
+        0 0 10px 
+    );
+}
+
+#list-app {
+    color: greenyellow;
+    margin-top: 2vw;
+    margin-left: -31vw;
+    font-family: atomic;
+    font-size: 3vw;
+    filter: drop-shadow(
+        0 0 10px 
+    );
+}
+
+#list-work {
+    color: greenyellow;
+    margin-top: 2vw;
+    margin-left: -31vw;
+    font-family: atomic;
+    font-size: 5vw;
+    filter: drop-shadow(
+        0 0 10px 
+    );
+}
+
+#list-connec {
+    color: greenyellow;
+    margin-top: 2vw;
+    margin-left: -31vw;
+    font-family: atomic;
+    font-size: 5vw;
+    filter: drop-shadow(
+        0 0 10px 
+    );
+}
+
+#list-image {
+    margin-top: 5vw;
+    margin-left: 5vw;
+    color: greenyellow;
+    font-family: atomic;
+    font-size: 5vw;
+}
+#list-image img {
+    width: 20vw;
+    mask-image: linear-gradient(
+        black 80%, 
+        transparent
+    );
+}
+#list-image p {
+    margin-left: 5vw;
+    filter: drop-shadow(
+        0 0 10px 
+    );
+}
