@@ -70,6 +70,22 @@ function readid(url) {
                 <td scope="row">Vehicles</th>
                 <td colspan="2" id="vehicles" style = "background-color: white; color: black;"></td>
                 </tr>
+                <tr>
+                <td scope="row">Starships</th>
+                <td colspan="2" id="starships" style = "background-color: white; color: black;"></td>
+                </tr>
+                <tr>
+                <td scope="row">Created</th>
+                <td colspan="2">${data.created}</td>
+                </tr>
+                <tr>
+                <td scope="row">Edited</th>
+                <td colspan="2">${data.edited}</td>
+                </tr>
+                <tr>
+                <td scope="row">Url</th>
+                <td colspan="2">${data.url}</td>
+                </tr>
             </tbody>
             </table>
         `;
@@ -155,8 +171,37 @@ function readid(url) {
                     <p>Created: ${vehiclesData.created}</p>
                     <p>Edited: ${vehiclesData.edited}</p>
                     <p>Url: ${vehiclesData.url}</p>
+                    -------------------------------------------------------------------------------------------------------------------------------
+                `;
+            });
+        });
+
+        data.starships.forEach(starshipsUrl => {
+            fetch(starshipsUrl)
+              .then(res => res.json())
+              .then(starshipsData => {
+                const starshipsElement = document.getElementById(`starships`);
+                starshipsElement.innerHTML += `
+                    <p>Name: ${starshipsData.name}</p>
+                    <p>Model: ${starshipsData.model}</p>
+                    <p>Manufacturer: ${starshipsData.manufacturer}</p>
+                    <p>Cost in credits: ${starshipsData.cost_in_credits}</p>
+                    <p>Length: ${starshipsData.length}</p>
+                    <p>Max atmosphering speed: ${starshipsData.max_atmosphering_speed}</p>
+                    <p>Crew: ${starshipsData.crew}</p>
+                    <p>Passengers: ${starshipsData.passengers}</p>
+                    <p>Cargo capacity: ${starshipsData.cargo_capacity}</p>
+                    <p>Consumables: ${starshipsData.consumables}</p>
+                    <p>Hyperdrive rating: ${starshipsData.hyperdrive_rating}</p>
+                    <p>MGLT: ${starshipsData.hyperdrive_rating}</p>
+                    <p>Starship class: ${starshipsData.starship_class}</p>
+                    <p>Created: ${starshipsData.created}</p>
+                    <p>Edited: ${starshipsData.edited}</p>
+                    <p>Url: ${starshipsData.url}</p>
+                    -------------------------------------------------------------------------------------------------------------------------------
                 `;
             });
         });
     })
+    
 }
