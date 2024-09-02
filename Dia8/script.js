@@ -56,19 +56,19 @@ function readid(url) {
                 </tr>
                 <tr>
                 <td scope="row">Homeworld</th>
-                <td colspan="2" id="homeworld" style = "background-color: white; color: black;"></td>
+                <td colspan="2"><ul class="list-group" ><li class="list-group-item" id="homeworld"></td>
                 </tr>
                 <tr>
                 <td scope="row">Films</th>
-                <td colspan="2" id="films" style = "background-color: white; color: black;"></td>
+                <td colspan="2"  id="films"></td>               
                 </tr>
                 <tr>
                 <td scope="row">Species</th>
-                <td colspan="2" id="species" style = "background-color: white; color: black;"></td>
+                <td colspan="2" id="species"></td>
                 </tr>
                 <tr>
                 <td scope="row">Vehicles</th>
-                <td colspan="2" id="vehicles" style = "background-color: white; color: black;"></td>
+                <td colspan="2" id="vehicles"></td>
                 </tr>
                 <tr>
                 <td scope="row">Starships</th>
@@ -114,16 +114,27 @@ function readid(url) {
               .then(filmData => {
                 const filmElement = document.getElementById(`films`);
                 filmElement.innerHTML += `
-                    <p>${filmData.title}</p>
-                    <p>Episode ID: ${filmData.episode_id}</p>
-                    <p>Opening Crawl: ${filmData.opening_crawl}</p>
-                    <p>Director: ${filmData.director}</p>
-                    <p>Producer: ${filmData.producer}</p>
-                    <p>Release Date: ${filmData.release_date}</p>
-                    <p>Created: ${filmData.created}</p>
-                    <p>Edited: ${filmData.edited}</p>
-                    <p>Url: ${filmData.url}</p>
-                    -----------------------------------------------------------------------------------------------------------------------------
+                    <table>
+                        <tbody>
+                            <tr>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <p>${filmData.title}</p>
+                                        <p>Episode ID: ${filmData.episode_id}</p>
+                                        <p>Opening Crawl: ${filmData.opening_crawl}</p>
+                                        <p>Director: ${filmData.director}</p>
+                                        <p>Producer: ${filmData.producer}</p>
+                                        <p>Release Date: ${filmData.release_date}</p>
+                                        <p>Created: ${filmData.created}</p>
+                                        <p>Edited: ${filmData.edited}</p>
+                                        <p>Url: ${filmData.url}</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            </tr>
+                        </table>
+                    </tbody>
                 `;
             });
         });
@@ -135,18 +146,30 @@ function readid(url) {
                 const speciesElement = document.getElementById(`species`);
                 speciesElement.innerHTML = ""
                 speciesElement.innerHTML += `
-                    <p>Name: ${speciesData.name}</p>
-                    <p>Classification: ${speciesData.classification}</p>
-                    <p>Designation: ${speciesData.designation}</p>
-                    <p>Average height: ${speciesData.average_height}</p>
-                    <p>Skin colors: ${speciesData.skin_colors}</p>
-                    <p>Eye colors: ${speciesData.eye_colors}</p>
-                    <p>Average lifespan: ${speciesData.average_lifespan}</p>
-                    <p>Homeworld: ${speciesData.homeworld}</p>
-                    <p>Language: ${speciesData.language}</p>
-                    <p>Created: ${speciesData.created}</p>
-                    <p>Edited: ${speciesData.edited}</p>
-                    <p>Url: ${speciesData.url}</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <p>Name: ${speciesData.name}</p>
+                                        <p>Classification: ${speciesData.classification}</p>
+                                        <p>Designation: ${speciesData.designation}</p>
+                                        <p>Average height: ${speciesData.average_height}</p>
+                                        <p>Skin colors: ${speciesData.skin_colors}</p>
+                                        <p>Eye colors: ${speciesData.eye_colors}</p>
+                                        <p>Average lifespan: ${speciesData.average_lifespan}</p>
+                                        <p>Homeworld: ${speciesData.homeworld}</p>
+                                        <p>Language: ${speciesData.language}</p>
+                                        <p>Created: ${speciesData.created}</p>
+                                        <p>Edited: ${speciesData.edited}</p>
+                                        <p>Url: ${speciesData.url}</p>
+                                    </li>
+                            </ul>
+                        </td>
+                        </tr>
+                    </table>
+                </tbody>
                 `;
             });
         });
@@ -157,21 +180,32 @@ function readid(url) {
               .then(vehiclesData => {
                 const vehiclesElement = document.getElementById(`vehicles`);
                 vehiclesElement.innerHTML += `
-                    <p>Name: ${vehiclesData.name}</p>
-                    <p>Model: ${vehiclesData.model}</p>
-                    <p>Manufacturer: ${vehiclesData.manufacturer}</p>
-                    <p>Cost in credits: ${vehiclesData.cost_in_credits}</p>
-                    <p>Length: ${vehiclesData.length}</p>
-                    <p>Max atmosphering speed: ${vehiclesData.max_atmosphering_speed}</p>
-                    <p>Crew: ${vehiclesData.crew}</p>
-                    <p>Passengers: ${vehiclesData.passengers}</p>
-                    <p>Cargo capacity: ${vehiclesData.cargo_capacity}</p>
-                    <p>Consumables: ${vehiclesData.consumables}</p>
-                    <p>Vehicle class: ${vehiclesData.vehicle_class}</p>
-                    <p>Created: ${vehiclesData.created}</p>
-                    <p>Edited: ${vehiclesData.edited}</p>
-                    <p>Url: ${vehiclesData.url}</p>
-                    -------------------------------------------------------------------------------------------------------------------------------
+                    <table>
+                        <tbody>
+                            <tr>
+                            <td>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <p>Name: ${vehiclesData.name}</p>
+                                        <p>Model: ${vehiclesData.model}</p>
+                                        <p>Manufacturer: ${vehiclesData.manufacturer}</p>
+                                        <p>Cost in credits: ${vehiclesData.cost_in_credits}</p>
+                                        <p>Length: ${vehiclesData.length}</p>
+                                        <p>Max atmosphering speed: ${vehiclesData.max_atmosphering_speed}</p>
+                                        <p>Crew: ${vehiclesData.crew}</p>
+                                        <p>Passengers: ${vehiclesData.passengers}</p>
+                                        <p>Cargo capacity: ${vehiclesData.cargo_capacity}</p>
+                                        <p>Consumables: ${vehiclesData.consumables}</p>
+                                        <p>Vehicle class: ${vehiclesData.vehicle_class}</p>
+                                        <p>Created: ${vehiclesData.created}</p>
+                                        <p>Edited: ${vehiclesData.edited}</p>
+                                        <p>Url: ${vehiclesData.url}</p>
+                                    </li>
+                                </ul>
+                            </td>
+                            </tr>
+                        </table>
+                    </tbody>
                 `;
             });
         });
