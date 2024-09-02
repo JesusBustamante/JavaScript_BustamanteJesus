@@ -6,31 +6,33 @@
 }
 
 #container {
+    position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 49vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #inp {
-    position: relative;
-    top: -20em;
-    left: 45em;
-    width: 22em;
-    height: 3em;
-    border-radius: 0.3em;
+    position: absolute;
+    top: 30vw;
+    left: 41.5vw;
+    width: 15.5vw;
+    height: 2vw;
+    border-radius: 0.3vw;
     z-index: 1;
 }
 
 .cajita {
-    position: relative;
-    top: -19em;
-    left: 37.2em;
-    width: 18.2em;
-    height: 2.6em;
-    border-radius: 0.3em;
+    position: absolute;
+    top: 30.2vw;
+    left: 41.3vw;
+    width: 15.5vw;
+    height: 2vw;
+    border-radius: 0.3vw;
     background-color: gray;
+    box-shadow: 3px 2px 3px 2px rgba(0, 0, 0, 0.7);
 }
 
 #screen {
@@ -38,11 +40,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 16.5vw;
+    width: 16vw;
     height: 11vw;
     top: 15vw;
-    left: 40.5vw;
+    left: 41vw;
     border-radius: 1vw;
+    scale: 1.5;
 }
 
 #screens {
@@ -50,12 +53,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 16.5vw;
-    height: 11vw;
-    top: 22vw;
-    left: 43vw;
+    top: 25.7vw;
+    left: 48vw;
     border-radius: 1vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
+    font-family: letra;
 }
 
 #screenss{
@@ -63,10 +65,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 16.5vw;
-    height: 11vw;
-    top: 22vw;
-    left: 37vw;
+    top: 25.9vw;
+    left: 45vw;
     border-radius: 1vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
+    font-family: letra;
+    opacity: 0.5;
+}
+
+#botonp {
+    position: absolute;
+    top: 35vw;
+    left: 41.5vw;
+    width: 7vw;
+    height: 3vw;
+    background-color: #424242;
+    color: white;
+    box-shadow: -2px 2px 3px 2px rgba(0, 0, 0, 0.7);
+}
+
+#botonn {
+    position: absolute;
+    top: 35vw;
+    left: 50vw;
+    width: 7vw;
+    height: 3vw;
+    background-color: #424242;
+    color: white;
+    box-shadow: -2px 2px 3px 2px rgba(0, 0, 0, 0.7);
 }
