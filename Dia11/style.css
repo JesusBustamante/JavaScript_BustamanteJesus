@@ -1,0 +1,89 @@
+@import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500";
+@import "https://fonts.googleapis.com/css?family=Raleway:400";
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#barra {
+    position: absolute;
+    width: 100vw;
+    height: 20vw;
+    top: 0vw;
+    left: 0vw;
+    background-color: #f9f9f9;
+    border-bottom: 0.2vw solid #d4d4d4;
+}
+
+#perfil {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 20vw;
+    top: 6vw;
+    left: 40%;
+    background-color: white;
+    border-radius: 50vw;
+    border: 0.2vw solid #d4d4d4;
+}
+
+#perfil img {
+    border-radius: 50vw;
+    width: 18vw;
+    height: 18vw;
+}
+
+#output {
+    width: 30vw;
+    height: 50vw;
+    font-size: 3vw;
+}
+
+#nombre {
+    position: absolute;
+    top: 27vw;
+    left: 47%;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1vw;
+}
+
+#name {
+    margin-top: 30vw;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 2vw;
+}
+
+#imagenes {
+    position: absolute;
+    top: 35vw;
+    left: 5vw;
+    width: 85vw;
+    height: 10vw;
+    overflow: hidden;
+}
+
+#profile {
+    cursor: pointer;
+    width: 80vw;
+    height: 20vw;
+    margin-top: -10vw;
+    margin-left: 3vw;
+}
+
+#profile:hover {
+    animation-name: up;
+    animation-duration: 0.50s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes up {
+
+  100% {
+    transform: translateY(50%);
+  }
+}
+
