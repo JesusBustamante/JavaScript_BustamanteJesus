@@ -2,6 +2,8 @@ fetch("https://randomuser.me/api/")
 .then (res => res.json())
 .then (daticos => {
 
+    let fecha = new Date(daticos.results[0].dob.date).toLocaleDateString()
+
     document.getElementById("perfil").innerHTML += `
         <image src = "${daticos.results[0].picture.large}">
     `
@@ -43,7 +45,7 @@ fetch("https://randomuser.me/api/")
     document.getElementById("imagenes3").addEventListener("mouseover", () => {
         mostrarInfo(`
             <p id = "info">My birthday is</p>
-            <p id = "infoo">${daticos.results[0].dob.date}</p>
+            <p id = "infoo">${fecha}</p>
         `);
     });
     document.getElementById("imagenes3").addEventListener("mouseout", ocultarInfo);
