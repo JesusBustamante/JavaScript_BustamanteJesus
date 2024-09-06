@@ -1,10 +1,11 @@
 @import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500";
 @import "https://fonts.googleapis.com/css?family=Raleway:400";
-#container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+body {
+    width: 100vw;
+    overflow: hidden;
 }
+
 #barra {
     position: absolute;
     width: 100vw;
@@ -30,18 +31,22 @@
 }
 
 #perfil img {
+    position: absolute;
     border-radius: 50vw;
     width: 18vw;
     height: 18vw;
 }
 
 #output {
-    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
     height: 50vw;
-    font-size: 3vw;
 }
 
-#nombre {
+#info {
     position: absolute;
     top: 27vw;
     left: 47%;
@@ -49,7 +54,7 @@
     font-size: 1vw;
 }
 
-#name {
+#infoo {
     margin-top: 30vw;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
@@ -58,32 +63,120 @@
 
 #imagenes {
     position: absolute;
+    background-image: url(./img/WhatsApp\ Image\ 2024-09-05\ at\ 10.43.24\ AM.jpeg);
+    background-repeat: no-repeat;
+    background-position-y: 125%;
     top: 35vw;
-    left: 5vw;
-    width: 85vw;
-    height: 10vw;
-    overflow: hidden;
+    left: 30vw;
+    width: 6vw;
+    height: 6vw;
 }
 
-#profile {
-    cursor: pointer;
-    width: 80vw;
-    height: 20vw;
-    margin-top: -10vw;
-    margin-left: 3vw;
+#imagenes2 {
+    position: absolute;
+    background-image: url(./img/WhatsApp\ Image\ 2024-09-05\ at\ 10.43.24\ AM.jpeg);
+    background-repeat: no-repeat;
+    background-position-y: 125%;
+    background-position-x: 17%;
+    top: 35vw;
+    left: 36vw;
+    width: 6vw;
+    height: 6vw;
 }
 
-#profile:hover {
+#imagenes3 {
+    position: absolute;
+    background-image: url(./img/WhatsApp\ Image\ 2024-09-05\ at\ 10.43.24\ AM.jpeg);
+    background-repeat: no-repeat;
+    background-position-y: 125%;
+    background-position-x: 39%;
+    top: 35vw;
+    left: 44vw;
+    width: 6vw;
+    height: 6vw;
+}
+
+#imagenes4 {
+    position: absolute;
+    background-image: url(./img/WhatsApp\ Image\ 2024-09-05\ at\ 10.43.24\ AM.jpeg);
+    background-repeat: no-repeat;
+    background-position-y: 125%;
+    background-position-x: 61%;
+    top: 35vw;
+    left: 51vw;
+    width: 6vw;
+    height: 6vw;
+}
+
+#imagenes5 {
+    position: absolute;
+    background-image: url(./img/WhatsApp\ Image\ 2024-09-05\ at\ 10.43.24\ AM.jpeg);
+    background-repeat: no-repeat;
+    background-position-y: 125%;
+    background-position-x: 83%;
+    top: 35vw;
+    left: 58vw;
+    width: 6vw;
+    height: 6vw;
+}
+
+#imagenes6 {
+    position: absolute;
+    background-image: url(./img/WhatsApp\ Image\ 2024-09-05\ at\ 10.43.24\ AM.jpeg);
+    background-repeat: no-repeat;
+    background-position-y: 125%;
+    background-position-x: 105%;
+    top: 35vw;
+    left: 65vw;
+    width: 6vw;
+    height: 6vw;
+}
+
+#imagenes:hover {
     animation-name: up;
-    animation-duration: 0.50s;
+    animation-duration: 0.3s;
     animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
+#imagenes2:hover {
+    animation-name: up;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+#imagenes3:hover {
+    animation-name: up;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+#imagenes4:hover {
+    animation-name: up;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+#imagenes5:hover {
+    animation-name: up;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+#imagenes6:hover {
+    animation-name: up;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
 
 @keyframes up {
-
-  100% {
-    transform: translateY(50%);
-  }
+    100% {
+        background-position-y: 0%;
+    }
+    
 }
-
