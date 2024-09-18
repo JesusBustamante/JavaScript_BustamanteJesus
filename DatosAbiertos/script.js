@@ -1,48 +1,70 @@
-var buscar = document.getElementById('search').value;
-
 let url = 'https://www.datos.gov.co/resource/gt2j-8ykr.json';
 
-function DataSearch() {
+fetch(url)
+.then(res => res.json())
+.then(datos => {
 
-    fetch(url)
-    .then(res => res.json())
-    .then(datos => {
-        console.log(datos)
 
-        var contenedor = document.getElementById('container')
-    
-        datos.forEach(element => {
-            var municipio = element.ciudad_municipio_nom
-            var estado = element.estado
+    const contenedor = document.getElementById('caja')
+    const search = document.getElementById('search')
 
-            contenedor.innerHTML += `
-                <h2>${municipio}</h2><br>
-                <p>${estado}</p>
-            `
-            if (buscar === municipio) {
-
-            }
-
-        });
-    })
-}
-
-DataSearch()
-
-search.addEventListener('input', e => {
-
-    const buscar = e.target.value.toLowerCase();
-    const articulos = contenedor.children;
-
-    Array.prototype.forEach.call(articulos, articulo => {
-
-        const nombreCompleto = articulo.querySelector('h2').textContent.toLowerCase();
-        const descripcion = articulo.querySelector('p').textContent.toLowerCase();
-
-        if (nombreCompleto.includes(buscar) || descripcion.includes(buscar)) {
-            articulo.style.display = 'block';
+    const conteoMunicipios = {};
+    datos.forEach(element => {
+        const municipio = element.ciudad_municipio_nom;
+        if (!conteoMunicipios[municipio]) {
+            conteoMunicipios[municipio] = { casos: 1, estado: element.estado };
         } else {
-            articulo.style.display = 'none';
+            conteoMunicipios[municipio].casos++;
         }
     });
+
+    const municipiosUnicos = Object.keys(conteoMunicipios);
+
+    municipiosUnicos.forEach(municipio => {
+
+        const lista = document.createElement('li')
+        lista.className = 'info'
+
+
+        lista.innerHTML = `
+            <h2>${municipio}</h2>
+            <p id = "casos" >Casos: ${conteoMunicipios[municipio].casos}</p><br>
+        `
+
+        contenedor.appendChild(lista)
+
+        document.getElementById('puntero').addEventListener('click', () => {
+            const contenedor = document.getElementById('caja');
+            contenedor.innerHTML = ''; 
+        
+            const lista = document.createElement('li');
+            lista.className = 'info';
+        
+            lista.innerHTML = `
+                <h2>CALI</h2>
+                <p id="casos">Casos: ${conteoMunicipios['CALI'].casos}</p><br>
+            `;
+        
+            contenedor.appendChild(lista);
+        });
+    });
+
+    search.addEventListener('input', e => {
+
+        const buscar = e.target.value.toLowerCase();
+        const articulos = contenedor.children;
+    
+        Array.prototype.forEach.call(articulos, articulo => {
+    
+            const nombreCompleto = articulo.querySelector('h2').textContent.toLowerCase();
+            const descripcion = articulo.querySelector('p').textContent.toLowerCase();
+    
+            if (nombreCompleto.includes(buscar) || descripcion.includes(buscar)) {
+                articulo.style.display = 'block';
+            } else {
+                articulo.style.display = 'none';
+            }
+        });
+    });
+    
 });
